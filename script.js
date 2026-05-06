@@ -14,8 +14,12 @@
       }
 
       const data = await response.json();
+      const markdown = data.body || '';
 
-      container.innerHTML = data.html || '';
+      const rawHtml = marked.parse(markdown);
+      const cleanHtml = DOMPurify.sanitize(rawHtml);
+
+      container.innerHTML = cleanHtml;
     } catch (error) {
       container.textContent = 'Content is currently unavailable.';
       console.error(error);

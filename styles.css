@@ -13,7 +13,9 @@ body {
   padding: 24px;
 }
 
-.embed-content h2 {
+.embed-content h1,
+.embed-content h2,
+.embed-content h3 {
   margin-top: 0;
 }
 
@@ -25,4 +27,9 @@ body {
 .embed-content a:focus {
   outline: 2px solid #000;
   outline-offset: 3px;
+}
+
+.embed-content ul,
+.embed-content ol {
+  padding-left: 1.5rem;
 }
