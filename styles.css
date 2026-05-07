@@ -13,6 +13,10 @@ body {
   padding: 24px;
 }
 
+.embed-content p {
+  margin: 5px 0;
+}
+
 .embed-content h1,
 .embed-content h2,
 .embed-content h3 {
@@ -33,3 +37,5 @@ body {
 .embed-content ol {
   padding-left: 1.5rem;
 }
+
+
