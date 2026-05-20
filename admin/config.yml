@@ -17,7 +17,3 @@ collections:
           - label: "Body"
             name: "body"
             widget: "markdown"
-            editor_components:
-              - "code-block"
-              - "image"
-              - "center-align"
