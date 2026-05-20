@@ -5,9 +5,6 @@
   <title>Content Manager</title>
 
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    window.CMS_MANUAL_INIT = true;
-  </script>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
@@ -35,8 +32,6 @@
         return '<div class="text-center">' + (data.content || '') + '</div>';
       }
     });
-
-    CMS.init();
   </script>
 </body>
 </html>
