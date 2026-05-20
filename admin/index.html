@@ -8,5 +8,30 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.registerEditorComponent({
+      id: 'center-align',
+      label: 'Center align',
+      fields: [
+        {
+          name: 'content',
+          label: 'Content',
+          widget: 'markdown'
+        }
+      ],
+      pattern: /^::: center\n([\s\S]*?)\n:::$/m,
+      fromBlock: function(match) {
+        return {
+          content: match[1]
+        };
+      },
+      toBlock: function(data) {
+        return '::: center\n' + (data.content || '').trim() + '\n:::';
+      },
+      toPreview: function(data) {
+        return '<div class="text-center">' + (data.content || '') + '</div>';
+      }
+    });
+  </script>
 </body>
 </html>
