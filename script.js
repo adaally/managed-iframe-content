@@ -3,17 +3,6 @@
 
   if (!container) return;
 
-  function renderMarkdown(markdown) {
-    const markdownWithCenteredBlocks = markdown.replace(
-      /^::: center\n([\s\S]*?)\n:::/gm,
-      function(_, content) {
-        return '<div class="text-center">\n' + marked.parse(content.trim()) + '\n</div>';
-      }
-    );
-
-    return marked.parse(markdownWithCenteredBlocks);
-  }
-
   async function loadContent() {
     try {
       const response = await fetch('./content.json', {
@@ -27,7 +16,7 @@
       const data = await response.json();
       const markdown = data.body || '';
 
-      const rawHtml = renderMarkdown(markdown);
+      const rawHtml = marked.parse(markdown);
       const cleanHtml = DOMPurify.sanitize(rawHtml);
 
       container.innerHTML = cleanHtml;
